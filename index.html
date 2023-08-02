@@ -153,7 +153,7 @@
       </p>
     </div>
       <div style='border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;' class="container is-max-desktop has-text-centered">
-        <h4 style="text-align:left;">Scene Selection</h2>
+        <h5 style="text-align:left;">Scene Selection</h5>
         <div id='novel-scene-selector' class="row">
         </div>
       </div>
@@ -200,14 +200,15 @@
       </div>
       <br/>
       <div style='border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;' class="container is-max-desktop has-text-centered">
-        <h4 style="text-align:left;">Frame Control (automated playback or manual slider)</h2>
+        <h5 style="text-align:left;">Frame Control (automated playback or manual slider)</h5>
         <!-- <p class="content has-text-justified">
 		Notice how generated scenes diverge more with frames further to the right of the slider.
         </p> -->
         <div class="row">
-          <div class="col-2"> <div onclick='novel_viewer.stop_anim();' class=selectable>Stop animation</div> </div>
-          <div class="col-2"> <div onclick='novel_viewer.cycle_frames(200);' class=selectable>Play at 5fps</div> </div>
-          <div class="col-2"> <div onclick='novel_viewer.cycle_frames(100);' class=selectable>Play at 10fps</div> </div>
+          <div class="col-2"> <div onclick='novel_viewer.cycle_frames(100);' class=selectable>Play</div> </div>
+          <div class="col-2"> <div onclick='novel_viewer.stop_anim();' class=selectable>Pause</div> </div>
+          <!-- <div class="col-2"> <div onclick='novel_viewer.cycle_frames(200);' class=selectable>Play at 5fps</div> </div> -->
+          
         </div>
 	<br/>
         <div class="row">
