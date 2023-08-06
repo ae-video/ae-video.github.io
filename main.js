@@ -47,6 +47,20 @@ class Sample_viewer{
 	change_scene(idx){
 		this.base_im = idx;
 		this.update_ims();
+
+		this.imgs = [];
+
+		var sample_padded = this.cur_sample.toString().padStart(2,0);
+		//this trick lets you load in all images for scene in the background so playback is smooth
+		for (let j=0; j<4; j++){
+			let method = methods[j];
+			for (let i=0;i<100;i++) {
+			    this.imgs.push(new Image());
+				let frame_padded = i.toString().padStart(4,0);
+			    this.imgs[j*100+i].src = `assets/individual-frames/${this.base_im}/${method}/${sample_padded}/${frame_padded}.jpg`;
+			    console.log(`assets/individual-frames/${this.base_im}/${method}/${sample_padded}/${frame_padded}.jpg`);
+			}
+		}
 	}
 	// change_variant(name){
 	// 	this.variant = name;
@@ -64,19 +78,7 @@ class Sample_viewer{
 		this.cur_sample = idx;
 		this.update_ims();
 
-		this.imgs = [];
-
-		var sample_padded = this.cur_sample.toString().padStart(2,0);
-		//this trick lets you load in all images for scene in the background so playback is smooth
-		for (let j=0; j<4; j++){
-			let method = methods[j];
-			for (let i=0;i<100;i++) {
-			    this.imgs.push(new Image());
-				let frame_padded = i.toString().padStart(4,0);
-			    this.imgs[j*100+i].src = `assets/individual-frames/${this.base_im}/${method}/${sample_padded}/${frame_padded}.jpg`;
-			    console.log(`assets/individual-frames/${this.base_im}/${method}/${sample_padded}/${frame_padded}.jpg`);
-			}
-		}
+		
 		// for (let i=0;i<3;i++){
 		// 	document.getElementById(`${this.prefix}_sample_selector_${i+1}`).style.backgroundColor = 'rgb(240,240,240)';
 		// }
@@ -128,6 +130,7 @@ var novel_viewer = null;
 document.addEventListener("DOMContentLoaded", function() {
 	// create the viewer, and set the initial frame
 	novel_viewer = new Sample_viewer('novel',99,4);
+	novel_viewer.change_scene(0);
 	novel_viewer.change_frame(0);
 	novel_viewer.change_sample(0);
 	// novel_viewer.change_variant('orbit');
