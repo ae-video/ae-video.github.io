@@ -129,7 +129,7 @@ var novel_viewer = null;
 document.addEventListener("DOMContentLoaded", function() {
 	// create the viewer, and set the initial frame
 	novel_viewer = new Sample_viewer('novel',99,4);
-	novel_viewer.change_scene(0000);
+	novel_viewer.change_scene('0000');
 	novel_viewer.change_frame(0);
 	novel_viewer.change_sample(0);
 	// novel_viewer.change_variant('orbit');
