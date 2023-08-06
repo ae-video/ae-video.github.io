@@ -68,12 +68,14 @@ class Sample_viewer{
 
 		let sample_padded = this.cur_sample.toString().padStart(2,0);
 		methods = ["entropy", "saliency", "global", "semantic"]
+		//this trick lets you load in all images for scene in the background so playback is smooth
 		for (j=0; j<4; j++){
 			method = methods[j];
 			for (i=0;i<100;i++) {
 			    imgs.push(new Image());
 				let frame_padded = i.toString().padStart(4,0);
 			    this.imgs[j*100+i].src = `assets/individual-frames/${this.prefix}/${method}/${sample_padded}/${frame_padded}.jpg`;
+			     console.log(`assets/individual-frames/${this.prefix}/${method}/${sample_padded}/${frame_padded}.jpg`);
 			}
 		}
 		// for (let i=0;i<3;i++){
@@ -128,6 +130,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	// create the viewer, and set the initial frame
 	novel_viewer = new Sample_viewer('novel',99,4);
 	novel_viewer.change_frame(0);
-	// novel_viewer.change_sample(0);
+	novel_viewer.change_sample(0);
 	// novel_viewer.change_variant('orbit');
 });
