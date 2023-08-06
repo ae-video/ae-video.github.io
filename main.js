@@ -69,7 +69,7 @@ class Sample_viewer{
 		var sample_padded = this.cur_sample.toString().padStart(2,0);
 		//this trick lets you load in all images for scene in the background so playback is smooth
 		for (let j=0; j<4; j++){
-			method = methods[j];
+			let method = methods[j];
 			for (let i=0;i<100;i++) {
 			    imgs.push(new Image());
 				let frame_padded = i.toString().padStart(4,0);
