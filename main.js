@@ -67,7 +67,6 @@ class Sample_viewer{
 		this.imgs = [];
 
 		let sample_padded = this.cur_sample.toString().padStart(2,0);
-		methods = ["entropy", "saliency", "global", "semantic"]
 		//this trick lets you load in all images for scene in the background so playback is smooth
 		for (j=0; j<4; j++){
 			method = methods[j];
