@@ -60,14 +60,14 @@ class Sample_viewer{
 	// 	}
 	// 	this.update_ims();
 	// }
-	change_sample(idx){
-		this.cur_sample = idx;
-		this.update_ims();
-		for (let i=0;i<3;i++){
-			document.getElementById(`${this.prefix}_sample_selector_${i+1}`).style.backgroundColor = 'rgb(240,240,240)';
-		}
-		document.getElementById(`${this.prefix}_sample_selector_${idx+1}`).style.backgroundColor = 'lightgrey';
-	}
+	// change_sample(idx){
+	// 	this.cur_sample = idx;
+	// 	this.update_ims();
+	// 	// for (let i=0;i<3;i++){
+	// 	// 	document.getElementById(`${this.prefix}_sample_selector_${i+1}`).style.backgroundColor = 'rgb(240,240,240)';
+	// 	// }
+	// 	document.getElementById(`${this.prefix}_sample_selector_${idx+1}`).style.backgroundColor = 'lightgrey';
+	// }
 
 
 	/* ===================================================================================
@@ -115,6 +115,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	// create the viewer, and set the initial frame
 	novel_viewer = new Sample_viewer('novel',99,4);
 	novel_viewer.change_frame(0);
-	novel_viewer.change_sample(0);
+	// novel_viewer.change_sample(0);
 	// novel_viewer.change_variant('orbit');
 });
