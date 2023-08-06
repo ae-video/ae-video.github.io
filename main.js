@@ -60,14 +60,27 @@ class Sample_viewer{
 	// 	}
 	// 	this.update_ims();
 	// }
-	// change_sample(idx){
-	// 	this.cur_sample = idx;
-	// 	this.update_ims();
-	// 	// for (let i=0;i<3;i++){
-	// 	// 	document.getElementById(`${this.prefix}_sample_selector_${i+1}`).style.backgroundColor = 'rgb(240,240,240)';
-	// 	// }
-	// 	document.getElementById(`${this.prefix}_sample_selector_${idx+1}`).style.backgroundColor = 'lightgrey';
-	// }
+	change_sample(idx){
+		this.cur_sample = idx;
+		this.update_ims();
+
+		this.imgs = [];
+
+		let sample_padded = this.cur_sample.toString().padStart(2,0);
+		methods = ["entropy", "saliency", "global", "semantic"]
+		for (j=0; j<4; j++){
+			method = methods[j];
+			for (i=0;i<100;i++) {
+			    imgs.push(new Image());
+				let frame_padded = i.toString().padStart(4,0);
+			    imgs[i].src = `assets/individual-frames/initial-frames/${this.prefix}/${method}/${sample_padded}/${frame_padded}.jpg`;
+			}
+		}
+		// for (let i=0;i<3;i++){
+		// 	document.getElementById(`${this.prefix}_sample_selector_${i+1}`).style.backgroundColor = 'rgb(240,240,240)';
+		// }
+		//document.getElementById(`${this.prefix}_sample_selector_${idx+1}`).style.backgroundColor = 'lightgrey';
+	}
 
 
 	/* ===================================================================================
