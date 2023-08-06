@@ -73,7 +73,7 @@ class Sample_viewer{
 			for (i=0;i<100;i++) {
 			    imgs.push(new Image());
 				let frame_padded = i.toString().padStart(4,0);
-			    imgs[i].src = `assets/individual-frames/initial-frames/${this.prefix}/${method}/${sample_padded}/${frame_padded}.jpg`;
+			    this.imgs[j*100+i].src = `assets/individual-frames/${this.prefix}/${method}/${sample_padded}/${frame_padded}.jpg`;
 			}
 		}
 		// for (let i=0;i<3;i++){
