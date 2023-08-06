@@ -71,7 +71,7 @@ class Sample_viewer{
 		for (let j=0; j<4; j++){
 			let method = methods[j];
 			for (let i=0;i<100;i++) {
-			    imgs.push(new Image());
+			    this.imgs.push(new Image());
 				let frame_padded = i.toString().padStart(4,0);
 			    this.imgs[j*100+i].src = `assets/individual-frames/${this.prefix}/${method}/${sample_padded}/${frame_padded}.jpg`;
 			    console.log(`assets/individual-frames/${this.prefix}/${method}/${sample_padded}/${frame_padded}.jpg`);
