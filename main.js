@@ -58,7 +58,6 @@ class Sample_viewer{
 			    this.imgs.push(new Image());
 				let frame_padded = i.toString().padStart(4,0);
 			    this.imgs[j*100+i].src = `assets/individual-frames/${this.base_im}/${method}/${sample_padded}/${frame_padded}.jpg`;
-			    console.log(`assets/individual-frames/${this.base_im}/${method}/${sample_padded}/${frame_padded}.jpg`);
 			}
 		}
 	}
@@ -130,7 +129,7 @@ var novel_viewer = null;
 document.addEventListener("DOMContentLoaded", function() {
 	// create the viewer, and set the initial frame
 	novel_viewer = new Sample_viewer('novel',99,4);
-	novel_viewer.change_scene(0);
+	novel_viewer.change_scene(0000);
 	novel_viewer.change_frame(0);
 	novel_viewer.change_sample(0);
 	// novel_viewer.change_variant('orbit');
