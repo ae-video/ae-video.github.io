@@ -61,14 +61,14 @@ class Sample_viewer{
 		This is the main method that takes all the image parameters and updates the images in the web page
 		*/
 		document.getElementById(`text-ev`).textContent = evs[this.cur_ev_data];
-		for (let i=0; i<3; i++){
+		let i=0
 
-			let frame_padded = ((this.cur_frame_data+i)*5).toString().padStart(2,0);
-			let ev_padded = this.cur_ev_data.toString().padStart(2,0);
-			document.getElementById(`data-${i}`).src = `assets/images/data/${this.base_im_data}/${frame_padded}${ev_padded}.jpg`;
-			document.getElementById(`text-${i}`).textContent = 'T'+frame_padded;
+		let frame_padded = ((this.cur_frame_data+i)*5).toString().padStart(2,0);
+		let ev_padded = this.cur_ev_data.toString().padStart(2,0);
+		document.getElementById(`data-${i}`).src = `assets/images/data/${this.base_im_data}/${frame_padded}${ev_padded}.jpg`;
+		document.getElementById(`text-${i}`).textContent = 'T'+frame_padded;
 		
-		}
+		
 	}
 
 	/* ===================================================================================
