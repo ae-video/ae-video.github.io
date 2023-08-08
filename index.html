@@ -251,9 +251,13 @@
       </div>
       <br/> -->
       <h3 class="subtitle">Dataset Viewer</h2>
-      <p id ='text-ev' class="subtitle" style='font-size:0.85em; text-align: right;'> Shutter Speed</p>
+      
       <div class="row" style="justify-content: space-evenly;">
-        <div class=col-3 style='flex:1 1 50%;max-width:50%; margin-left: 25%;'>
+
+          <!-- <p id ='text-ev' class="subtitle" style='font-size:0.85em;'><p> -->
+           
+
+        <div class=col-3 style='flex:1 1 50%;max-width:50%;'>
           <img id='data-0' style='width:100%;' src="assets/images/data/0000/0000.jpg">
          
         </div>
@@ -270,13 +274,6 @@
           <!-- <h5 class="subtitle" style='font-size:0.85em;'>Entropy</h5> -->
         <!-- </div> -->
         
-        <div class=col-3 style='margin-left: auto;'>
-          <!-- <p id ='text-ev' class="subtitle" style='font-size:0.85em;'><p> -->
-           
-            <input orient="vertical" style="-webkit-appearance: slider-vertical;" class = "input-range" type="range" min="0" max="14" value="7" id='data_ev_control' oninput='novel_viewer.change_ev_data(document.getElementById("data_ev_control").value);'>
-   
-          
-        </div>
        
       </div>
       <!-- <br/>
@@ -295,6 +292,9 @@
         <div class="col">
           <input style="width:85%;margin-left:1em;margin-right:3.5em;" type="range" min="0" max="19" value="0" id='data_frame_control' oninput='novel_viewer.change_frame_data(document.getElementById("data_frame_control").value);'>
           <h5 id ='text-0' class="subtitle" style='font-size:0.85em;'></h5>
+          <input style="width:85%;margin-left:1em;margin-right:3.5em;" type="range" min="0" max="14" value="7" id='data_ev_control' oninput='novel_viewer.change_ev_data(document.getElementById("data_ev_control").value);'>
+          <p id ='text-ev' class="subtitle" style='font-size:0.85em; text-align: center;'> Shutter Speed</p>
+   
         </div>
 
       <!-- </div> -->

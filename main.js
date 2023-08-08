@@ -2,7 +2,7 @@
 
 
 var methods = ['global','semantic','saliency','entropy'];
-var evs = ['15"','8"','6"','4"','2"','1"','1/2','1/4','1/8','1/15','1/30','1/60','1/125','1/250','1/500']
+var evs = ['15','8','6','4','2','1','1/2','1/4','1/8','1/15','1/30','1/60','1/125','1/250','1/500']
 class Sample_viewer{
 	/*
 	Viewer setup needs a mix of HTML and JS
@@ -60,7 +60,7 @@ class Sample_viewer{
 		/*
 		This is the main method that takes all the image parameters and updates the images in the web page
 		*/
-		document.getElementById(`text-ev`).textContent = "Shutter Speed " + evs[this.cur_ev_data];
+		document.getElementById(`text-ev`).textContent = "Shutter Speed: " + evs[this.cur_ev_data] + " s";
 		let i=0
 
 		let frame_padded = ((this.cur_frame_data+i)*5).toString().padStart(2,0);
@@ -160,7 +160,7 @@ class Sample_viewer{
 		This is called when the user clicks and drags on the slider to see a specific ev
 		*/
 		// this.stop_anim();
-		this.cur_ev_data= 14-parseInt(idx); // swap order
+		this.cur_ev_data= parseInt(idx); // swap order
 		this.update_ims_data();
 	}
 
