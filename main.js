@@ -34,7 +34,7 @@ class Sample_viewer{
 
 
 		for (let i=0;i<this.n_scenes_data;i++){
-			document.getElementById(`${this.prefix}-scene-selector_data`).innerHTML += `<div onclick="${this.prefix}_viewer.change_scene_data(\'${i.toString().padStart(4,0)}\');" class="col-2"> <img style="border-radius:1em;" class=selectable src="assets/icons/data/${i.toString().padStart(2,0)}.jpg"> </div>`;
+			document.getElementById(`${this.prefix}-scene-selector_data`).innerHTML += `<div onclick="${this.prefix}_viewer.change_scene_data(\'${i.toString().padStart(4,0)}\');" class="col-2"> <img style="border-radius:1em; max-width: 7em" class=selectable src="assets/icons/data/${i.toString().padStart(2,0)}.jpg"> </div>`;
 		}
 
 
