@@ -103,19 +103,19 @@
     <br/>
     <h2 class="title">Authors</h2>
     <div class="row">
-        <div class="col-12" style='flex:1 1 30%;max-width:30%;margin-left: 5%; '>
+        <div class="col-12" style='flex:1 1 30%;max-width:30%;margin-left: 5%; padding: 5%;'>
             <a class="project_author" href="https://techsaico.com/">
                 <img class="author_icon" src="assets/authors/Sai.jpg">
                 <p style='margin-top:0.5em;font-size:1.1em;font-weight:bold;'>SaiKiran Tedla</p>
             </a>
         </div>
-        <div class="col-12" style='flex:1 1 30%;max-width:30%;'>
+        <div class="col-12" style='flex:1 1 30%;max-width:30%; padding: 5%;'>
           <a class="project_author" href="https://beixuanyang.com/">
               <img class="author_icon" src="assets/authors/beixuan.jpg">
               <p style='margin-top:0.5em;font-size:1.1em;font-weight:bold;'>Beixuan Yang</p>
           </a>
       </div>
-        <div class="col-12" style='flex:1 1 30%; max-width:30%; margin-right: 5%;'>
+        <div class="col-12" style='flex:1 1 30%; max-width:30%; margin-right: 5%; padding: 5%;'>
             <a class="project_author" href="http://www.cse.yorku.ca/~mbrown/">
                 <img class="author_icon" src="assets/authors/Michael.jpg">
                 <p style='margin-top:0.5em;font-size:1.1em;font-weight:bold;'>Michael Brown</p>
@@ -250,11 +250,12 @@
         </div>
       </div>
       <br/> -->
-      <h3 class="subtitle">dataset</h2>
-      <div class="row">
-        <div class=col-3 style='flex:0 0 45%;max-width:45%;margin-left: 25%;'>
+      <h3 class="subtitle">Dataset Viewer</h2>
+      <p id ='text-ev' class="subtitle" style='font-size:0.85em; text-align: right;'> Shutter Speed</p>
+      <div class="row" style="justify-content: space-evenly;">
+        <div class=col-3 style='flex:1 1 50%;max-width:50%; margin-left: 25%;'>
           <img id='data-0' style='width:100%;' src="assets/images/data/0000/0000.jpg">
-          <h5 id ='text-0' class="subtitle" style='font-size:0.85em;'></h5>
+         
         </div>
         <!-- <div class=col-8 style='flex:0 0 24%;max-width:30%;'>
           <img id='data-1' style='width:100%;' src="assets/images/data/0000/0500.jpg">
@@ -268,16 +269,15 @@
           <img id='novel-entropy' style='width:100%;' src="assets/individual-frames/0000/entropy/00/0000.jpg"> -->
           <!-- <h5 class="subtitle" style='font-size:0.85em;'>Entropy</h5> -->
         <!-- </div> -->
-        <div class=col-3 style='flex:0 0 10%;max-width:30%'>
-          <p id ='text-ev' class="subtitle" style='font-size:0.85em;'><p>
-           
-          <!-- <input style="width:170%;margin-left:0%;margin-right:1em;-webkit-transform: rotate(90deg);margin-top: 25%;" type="range" min="0" max="14" value="0" id='data_ev_control' oninput='novel_viewer.change_ev_data(document.getElementById("data_ev_control").value);'> -->
-        </div>
-        <div class=col-3 style='flex:0 0 10%;max-width:30%'>
+        
+        <div class=col-3 style='margin-left: auto;'>
           <!-- <p id ='text-ev' class="subtitle" style='font-size:0.85em;'><p> -->
            
-          <input style="width:400%;margin-left:0%;margin-right:1em;-webkit-transform: rotate(90deg);margin-top: 150%;" type="range" min="0" max="14" value="0" id='data_ev_control' oninput='novel_viewer.change_ev_data(document.getElementById("data_ev_control").value);'>
+            <input orient="vertical" style="-webkit-appearance: slider-vertical;" class = "input-range" type="range" min="0" max="14" value="7" id='data_ev_control' oninput='novel_viewer.change_ev_data(document.getElementById("data_ev_control").value);'>
+   
+          
         </div>
+       
       </div>
       <!-- <br/>
       <div style='border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;' class="container is-max-desktop has-text-centered">
@@ -292,8 +292,9 @@
           
         <!-- </div> -->
 	<br/>
-        <div class="row">
+        <div class="col">
           <input style="width:85%;margin-left:1em;margin-right:3.5em;" type="range" min="0" max="19" value="0" id='data_frame_control' oninput='novel_viewer.change_frame_data(document.getElementById("data_frame_control").value);'>
+          <h5 id ='text-0' class="subtitle" style='font-size:0.85em;'></h5>
         </div>
 
       <!-- </div> -->

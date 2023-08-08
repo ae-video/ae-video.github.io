@@ -60,13 +60,13 @@ class Sample_viewer{
 		/*
 		This is the main method that takes all the image parameters and updates the images in the web page
 		*/
-		document.getElementById(`text-ev`).textContent = evs[this.cur_ev_data];
+		document.getElementById(`text-ev`).textContent = "Shutter Speed " + evs[this.cur_ev_data];
 		let i=0
 
 		let frame_padded = ((this.cur_frame_data+i)*5).toString().padStart(2,0);
 		let ev_padded = this.cur_ev_data.toString().padStart(2,0);
 		document.getElementById(`data-${i}`).src = `assets/images/data/${this.base_im_data}/${frame_padded}${ev_padded}.jpg`;
-		document.getElementById(`text-${i}`).textContent = 'T'+frame_padded;
+		document.getElementById(`text-${i}`).textContent = 'Time: '+frame_padded;
 		
 		
 	}
@@ -160,7 +160,7 @@ class Sample_viewer{
 		This is called when the user clicks and drags on the slider to see a specific ev
 		*/
 		// this.stop_anim();
-		this.cur_ev_data= parseInt(idx);
+		this.cur_ev_data= 14-parseInt(idx); // swap order
 		this.update_ims_data();
 	}
 
@@ -202,5 +202,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	// novel_viewer.change_sample(0);
 	novel_viewer.change_scene_data('0000');
 	novel_viewer.change_frame_data(0);
+	novel_viewer.change_ev_data(7); //set exposure to something we can initially see
 	// novel_viewer.change_variant('orbit');
 });
