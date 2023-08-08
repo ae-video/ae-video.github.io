@@ -29,7 +29,7 @@ class Sample_viewer{
 		this.base_im_data = '0000';
 
 		for (let i=0;i<this.n_scenes;i++){
-			document.getElementById(`${this.prefix}-scene-selector`).innerHTML += `<div onclick="${this.prefix}_viewer.change_scene(\'${i.toString().padStart(4,0)}\');" class="col-2"> <img style="border-radius:1em;" class=selectable src="assets/icons/${this.prefix}/${i.toString().padStart(4,0)}.jpg"> </div>`;
+			document.getElementById(`${this.prefix}-scene-selector`).innerHTML += `<div onclick="${this.prefix}_viewer.change_scene(\'${i.toString().padStart(4,0)}\');"> <img style="border-radius:1em; max-width: 7em" class=selectable src="assets/icons/${this.prefix}/${i.toString().padStart(4,0)}.jpg"> </div>`;
 		}
 
 

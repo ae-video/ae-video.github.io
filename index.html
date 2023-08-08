@@ -51,7 +51,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title text-muted">
+          <h1 style="font: 1em;" class="title is-1 publication-title text-muted" >
             Examining Autoexposure for Challenging Scenes
           </h1>
           <div class="is-size-5 publication-authors">
@@ -154,47 +154,26 @@
     </div>
       <div style='border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;' class="container is-max-desktop has-text-centered">
         <h5 style="text-align:left;">Scene Selection</h5>
-        <div id='novel-scene-selector' class="row">
+        <div id='novel-scene-selector' style="display:flex; flex-flow: row wrap; justify-content: space-evenly;">
         </div>
       </div>
       <br/>
-      <!-- <div style='border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;' class="container is-max-desktop has-text-centered">
-        <h4 style="text-align:left;">Motion Selection</h2>
-        <div class="row">
-          <div class="col-2"> <div id='orbit_selector' onclick='novel_viewer.change_variant("orbit");' class=selectable>Orbit</div> </div>
-          <div class="col-2"> <div id='spin_selector' onclick='novel_viewer.change_variant("spin");' class=selectable>Spin</div> </div>
-          <div class="col-2"> <div id='hop_selector' onclick='novel_viewer.change_variant("hop");' class=selectable>Hop</div> </div>
-        </div>
-      </div>
-      <br/>
-      <div style='border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;' class="container is-max-desktop has-text-centered">
-        <h4 style="text-align:left;">Sample Instance</h2>
-        <p class="content has-text-justified">
-		The stochastic nature of these models allow multiple plausible realities to be sampled. We provide three here.
-        </p>
-        <div class="row">
-          <div id='novel_sample_selector_1' style='margin-left:1em;cursor:pointer;background-color:rgb(240,240,240);border-radius:1em;padding:1em;' class='col selectable' onclick='novel_viewer.change_sample(0);'> 1 </div>
-          <div id='novel_sample_selector_2' style='margin-left:0.4em;cursor:pointer;background-color:rgb(240,240,240);border-radius:1em;padding:1em;' class='col selectable' onclick='novel_viewer.change_sample(1);'> 2 </div>
-          <div id='novel_sample_selector_3' style='margin-left:0.4em;margin-right:1em;cursor:pointer;background-color:rgb(240,240,240);border-radius:1em;padding:1em;' class='col selectable' onclick='novel_viewer.change_sample(2);'> 3 </div>
-        </div>
-      </div>
-      <br/> -->
       <h3 class="subtitle">AE methods Comparison</h2>
-      <div class="row">
-        <div class=col-6 style='flex:0 0 25%;max-width:25%;'>
-          <img id='novel-global' style='width:100%;' src="assets/individual-frames/0000/global/00/0000.jpg">
+      <div class="row" style="display:flex; flex-flow: row wrap; justify-content: space-evenly;">
+        <div style="max-width: 50%">
+          <img id='novel-global' style='width:100%; padding: 0.2em;' src="assets/individual-frames/0000/global/00/0000.jpg">
           <h5 class="subtitle" style='font-size:0.85em;'>Global</h5>
         </div>
-        <div class=col-6 style='flex:0 0 25%;max-width:25%;'>
-          <img id='novel-semantic' style='width:100%;' src="assets/individual-frames/0000/semantic/00/0000.jpg">
+        <div style="max-width: 50%">
+          <img id='novel-semantic' style='width:100%; padding: 0.2em;' src="assets/individual-frames/0000/semantic/00/0000.jpg">
           <h5 class="subtitle" style='font-size:0.85em;'>Semantic</h5>
         </div>
-        <div class=col-6 style='flex:0 0 25%;max-width:25%;'>
-          <img id='novel-saliency' style='width:100%;' src="assets/individual-frames/0000/saliency/00/0000.jpg">
+        <div style="max-width: 50%">
+          <img id='novel-saliency' style='width:100%; padding: 0.2em;' src="assets/individual-frames/0000/saliency/00/0000.jpg">
           <h5 class="subtitle" style='font-size:0.85em;'>Saliency</h5>
         </div>
-        <div class=col-6 style='flex:0 0 25%;max-width:25%;'>
-          <img id='novel-entropy' style='width:100%;' src="assets/individual-frames/0000/entropy/00/0000.jpg">
+        <div style="max-width: 50%">
+          <img id='novel-entropy' style='width:100%; padding: 0.2em;' src="assets/individual-frames/0000/entropy/00/0000.jpg">
           <h5 class="subtitle" style='font-size:0.85em;'>Entropy</h5>
         </div>
       </div>
