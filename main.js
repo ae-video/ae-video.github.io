@@ -2,6 +2,7 @@
 
 
 var methods = ['global','semantic','saliency','entropy'];
+var evs = ['15"','8"','6"','4"','2"','1"','1/2','1/4','1/8','1/15','1/30','1/60','1/125','1/250','1/500']
 class Sample_viewer{
 	/*
 	Viewer setup needs a mix of HTML and JS
@@ -20,9 +21,23 @@ class Sample_viewer{
 		this.need_stop_anim = false;
 		this.interval_id = null;
 		this.anim_dir = 1;
+
+		//add data variables
+		this.n_scenes_data = 2;
+		this.cur_frame_data = 0;
+		this.cur_ev_data = 0;
+		this.base_im_data = '0000';
+
 		for (let i=0;i<this.n_scenes;i++){
 			document.getElementById(`${this.prefix}-scene-selector`).innerHTML += `<div onclick="${this.prefix}_viewer.change_scene(\'${i.toString().padStart(4,0)}\');" class="col-2"> <img style="border-radius:1em;" class=selectable src="assets/icons/${this.prefix}/${i.toString().padStart(4,0)}.jpg"> </div>`;
 		}
+
+
+		for (let i=0;i<this.n_scenes_data;i++){
+			document.getElementById(`${this.prefix}-scene-selector_data`).innerHTML += `<div onclick="${this.prefix}_viewer.change_scene_data(\'${i.toString().padStart(4,0)}\');" class="col-2"> <img style="border-radius:1em;" class=selectable src="assets/icons/data/${i.toString().padStart(2,0)}.jpg"> </div>`;
+		}
+
+
 	}
 	update_ims(){
 		/*
@@ -38,6 +53,21 @@ class Sample_viewer{
 				let sample_padded = this.cur_sample.toString().padStart(2,0);
 				document.getElementById(`${this.prefix}-${method}`).src = `assets/individual-frames/${this.base_im}/${method}/${sample_padded}/${frame_padded}.jpg`;
 			}
+		}
+	}
+
+	update_ims_data(){
+		/*
+		This is the main method that takes all the image parameters and updates the images in the web page
+		*/
+		document.getElementById(`text-ev`).textContent = evs[this.cur_ev_data];
+		for (let i=0; i<3; i++){
+
+			let frame_padded = ((this.cur_frame_data+i)*5).toString().padStart(2,0);
+			let ev_padded = this.cur_ev_data.toString().padStart(2,0);
+			document.getElementById(`data-${i}`).src = `assets/images/data/${this.base_im_data}/${frame_padded}${ev_padded}.jpg`;
+			document.getElementById(`text-${i}`).textContent = 'T'+frame_padded;
+		
 		}
 	}
 
@@ -60,6 +90,24 @@ class Sample_viewer{
 			    this.imgs[j*100+i].src = `assets/individual-frames/${this.base_im}/${method}/${sample_padded}/${frame_padded}.jpg`;
 			}
 		}
+	}
+
+	change_scene_data(idx){
+		this.base_im_data = idx;
+		this.update_ims_data();
+
+		// this.imgs = [];
+
+		// var sample_padded = this.cur_sample.toString().padStart(2,0);
+		// //this trick lets you load in all images for scene in the background so playback is smooth
+		// for (let j=0; j<4; j++){
+		// 	let method = methods[j];
+		// 	for (let i=0;i<100;i++) {
+		// 	    this.imgs.push(new Image());
+		// 		let frame_padded = i.toString().padStart(4,0);
+		// 	    this.imgs[j*100+i].src = `assets/individual-frames/${this.base_im}/${method}/${sample_padded}/${frame_padded}.jpg`;
+		// 	}
+		// }
 	}
 	// change_variant(name){
 	// 	this.variant = name;
@@ -97,6 +145,26 @@ class Sample_viewer{
 		this.cur_frame = parseInt(idx);
 		this.update_ims();
 	}
+
+	change_frame_data(idx){
+		/*
+		This is called when the user clicks and drags on the slider to see a specific frame
+		*/
+		// this.stop_anim();
+		this.cur_frame_data = parseInt(idx);
+		this.update_ims_data();
+	}
+
+	change_ev_data(idx){
+		/*
+		This is called when the user clicks and drags on the slider to see a specific ev
+		*/
+		// this.stop_anim();
+		this.cur_ev_data= parseInt(idx);
+		this.update_ims_data();
+	}
+
+
 	next_frame(){
 		/*
 		This is used internally to play the sequence forward and backward, and also moves the slider to show the user what frame is being shown
@@ -131,6 +199,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	novel_viewer = new Sample_viewer('novel',99,4);
 	novel_viewer.change_scene('0000');
 	novel_viewer.change_frame(0);
-	novel_viewer.change_sample(0);
+	// novel_viewer.change_sample(0);
+	novel_viewer.change_scene_data('0000');
+	novel_viewer.change_frame_data(0);
 	// novel_viewer.change_variant('orbit');
 });

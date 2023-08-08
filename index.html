@@ -106,19 +106,19 @@
         <div class="col-12" style='flex:0 0 30%;max-width:33%;padding-left:10%;'>
             <a class="project_author" href="https://techsaico.com/">
                 <img class="author_icon" src="assets/authors/Sai.jpg">
-                <p style='margin-top:0.5em;font-size:1.3em;font-weight:bold;'>Sai Tedla</p>
+                <p style='margin-top:0.5em;font-size:1.1em;font-weight:bold;'>Sai Tedla</p>
             </a>
         </div>
         <div class="col-12" style='flex:0 0 30%;max-width:33%;padding-left:10%;'>
           <a class="project_author" href="https://beixuanyang.com/">
               <img class="author_icon" src="assets/authors/beixuan.jpg">
-              <p style='margin-top:0.5em;font-size:1.3em;font-weight:bold;'>Beixuan Yang</p>
+              <p style='margin-top:0.5em;font-size:1.1em;font-weight:bold;'>Beixuan Yang</p>
           </a>
       </div>
         <div class="col-12" style='flex:0 0 30%;max-width:33%;padding-left:10%;'>
             <a class="project_author" href="http://www.cse.yorku.ca/~mbrown/">
                 <img class="author_icon" src="assets/authors/Michael.jpg">
-                <p style='margin-top:0.5em;font-size:1.3em;font-weight:bold;'>Michael S. Brown</p>
+                <p style='margin-top:0.5em;font-size:1.1em;font-weight:bold;'>Michael Brown</p>
             </a>
         </div>
 
@@ -183,24 +183,24 @@
       <div class="row">
         <div class=col-6 style='flex:0 0 25%;max-width:25%;'>
           <img id='novel-global' style='width:100%;' src="assets/individual-frames/0000/global/00/0000.jpg">
-          <h5 class="subtitle">Global</h5>
+          <h5 class="subtitle" style='font-size:0.85em;'>Global</h5>
         </div>
         <div class=col-6 style='flex:0 0 25%;max-width:25%;'>
           <img id='novel-semantic' style='width:100%;' src="assets/individual-frames/0000/semantic/00/0000.jpg">
-          <h5 class="subtitle">Semantic</h5>
+          <h5 class="subtitle" style='font-size:0.85em;'>Semantic</h5>
         </div>
         <div class=col-6 style='flex:0 0 25%;max-width:25%;'>
           <img id='novel-saliency' style='width:100%;' src="assets/individual-frames/0000/saliency/00/0000.jpg">
-          <h5 class="subtitle">Saliency</h5>
+          <h5 class="subtitle" style='font-size:0.85em;'>Saliency</h5>
         </div>
         <div class=col-6 style='flex:0 0 25%;max-width:25%;'>
           <img id='novel-entropy' style='width:100%;' src="assets/individual-frames/0000/entropy/00/0000.jpg">
-          <h5 class="subtitle">Entropy</h5>
+          <h5 class="subtitle" style='font-size:0.85em;'>Entropy</h5>
         </div>
       </div>
       <br/>
       <div style='border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;' class="container is-max-desktop has-text-centered">
-        <h5 style="text-align:left;">Frame Control (automated playback or manual slider)</h5>
+        <h5 style="text-align:left;font-size: 1.2em;">Frame Control</h5>
         <!-- <p class="content has-text-justified">
 		Notice how generated scenes diverge more with frames further to the right of the slider.
         </p> -->
@@ -214,6 +214,9 @@
         <div class="row">
           <input style="width:100%;margin-left:1em;margin-right:1em;" type="range" min="0" max="99" value="0" id='novel_frame_control' oninput='novel_viewer.change_frame(document.getElementById("novel_frame_control").value);'>
         </div>
+        <!-- <div class="col-6">
+          <input style="width:100%;margin-left:1em;margin-right:1em;-webkit-transform: rotate(90deg);" type="range" min="0" max="99" value="0" id='novel_frame_control' oninput='novel_viewer.change_frame(document.getElementById("novel_frame_control").value);'>
+        </div> -->
       </div>
   </div>
   </div>
@@ -233,6 +236,90 @@
 
 <section class="hero teaser">
   <div class="hero-body">
+  <div style='border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;' class="container is-max-desktop has-text-centered">
+    <br/>
+    <h2 class="title">Sample Data</h2>
+    <div class="content has-text-justified">
+      <p class="content has-text-justified">
+        The following examples show 2 sample datasets with 15 exposure values in 20 time steps..
+      </p>
+    </div>
+      <div style='border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;' class="container is-max-desktop has-text-centered">
+        <h5 style="text-align:left;">Scene Selection</h5>
+        <div id='novel-scene-selector_data' class="row">
+        </div>
+      </div>
+      <br/>
+      <!-- <div style='border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;' class="container is-max-desktop has-text-centered">
+        <h4 style="text-align:left;">Motion Selection</h2>
+        <div class="row">
+          <div class="col-2"> <div id='orbit_selector' onclick='novel_viewer.change_variant("orbit");' class=selectable>Orbit</div> </div>
+          <div class="col-2"> <div id='spin_selector' onclick='novel_viewer.change_variant("spin");' class=selectable>Spin</div> </div>
+          <div class="col-2"> <div id='hop_selector' onclick='novel_viewer.change_variant("hop");' class=selectable>Hop</div> </div>
+        </div>
+      </div>
+      <br/>
+      <div style='border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;' class="container is-max-desktop has-text-centered">
+        <h4 style="text-align:left;">Sample Instance</h2>
+        <p class="content has-text-justified">
+		The stochastic nature of these models allow multiple plausible realities to be sampled. We provide three here.
+        </p>
+        <div class="row">
+          <div id='novel_sample_selector_1' style='margin-left:1em;cursor:pointer;background-color:rgb(240,240,240);border-radius:1em;padding:1em;' class='col selectable' onclick='novel_viewer.change_sample(0);'> 1 </div>
+          <div id='novel_sample_selector_2' style='margin-left:0.4em;cursor:pointer;background-color:rgb(240,240,240);border-radius:1em;padding:1em;' class='col selectable' onclick='novel_viewer.change_sample(1);'> 2 </div>
+          <div id='novel_sample_selector_3' style='margin-left:0.4em;margin-right:1em;cursor:pointer;background-color:rgb(240,240,240);border-radius:1em;padding:1em;' class='col selectable' onclick='novel_viewer.change_sample(2);'> 3 </div>
+        </div>
+      </div>
+      <br/> -->
+      <h3 class="subtitle">dataset</h2>
+      <div class="row">
+        <div class=col-8 style='flex:0 0 24%;max-width:30%;margin-left: 5%;'>
+          <img id='data-0' style='width:100%;' src="assets/images/data/0000/0000.jpg">
+          <h5 id ='text-0' class="subtitle" style='font-size:0.85em;'></h5>
+        </div>
+        <div class=col-8 style='flex:0 0 24%;max-width:30%;'>
+          <img id='data-1' style='width:100%;' src="assets/images/data/0000/0500.jpg">
+          <h5 id ='text-1' class="subtitle" style='font-size:0.85em;'></h5>
+        </div>
+        <div class=col-8 style='flex:0 0 24%;max-width:30%;margin-right: 0%;'>
+          <img id='data-2' style='width:100%;' src="assets/images/data/0000/1000.jpg">
+          <h5 id ='text-2' class="subtitle" style='font-size:0.85em;'></h5>
+        </div>
+        <!-- <div class=col-12 style='flex:0 0 20%;max-width:25%;'>
+          <img id='novel-entropy' style='width:100%;' src="assets/individual-frames/0000/entropy/00/0000.jpg"> -->
+          <!-- <h5 class="subtitle" style='font-size:0.85em;'>Entropy</h5> -->
+        <!-- </div> -->
+        <div class=col-12 style='flex:0 0 15%;max-width:30%'>
+          <h5 id ='text-ev' class="subtitle" style='font-size:0.45em;'></h5>
+          <input style="width:250%;margin-left:0%;margin-right:1em;-webkit-transform: rotate(90deg);margin-top: 15%;" type="range" min="0" max="14" value="0" id='data_ev_control' oninput='novel_viewer.change_ev_data(document.getElementById("data_ev_control").value);'>
+        </div>
+      </div>
+      <!-- <br/>
+      <div style='border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;' class="container is-max-desktop has-text-centered">
+        <h5 style="text-align:left;font-size: 1.2em;">Frame Control</h5> -->
+        <!-- <p class="content has-text-justified">
+		Notice how generated scenes diverge more with frames further to the right of the slider.
+        </p> -->
+        <!-- <div class="row">
+          <div class="col-2"> <div onclick='novel_viewer.cycle_frames(100);' class=selectable>Play</div> </div>
+          <div class="col-2"> <div onclick='novel_viewer.stop_anim();' class=selectable>Pause</div> </div> -->
+          <!-- <div class="col-2"> <div onclick='novel_viewer.cycle_frames(200);' class=selectable>Play at 5fps</div> </div> -->
+          
+        <!-- </div> -->
+	<br/>
+        <div class="row">
+          <input style="width:100%;margin-left:1em;margin-right:3.5em;" type="range" min="0" max="17" value="0" id='data_frame_control' oninput='novel_viewer.change_frame_data(document.getElementById("data_frame_control").value);'>
+        </div>
+
+      <!-- </div> -->
+  </div>
+  </div>
+</section>
+
+
+
+<!-- <section class="hero teaser">
+  <div class="hero-body">
   <div style='border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;padding-left:2em;padding-right:2em;' class="container is-max-desktop has-text-centered">
     <br/>
     <h2 class="title">Sample Data</h2>
@@ -245,24 +332,24 @@
       <div class="col-2" style='flex:0 0 25%;max-width:25%;'>
         <a  href="assets/images/dataset/Figures_dataset3.pdf"><img style='width:60%; border-radius: 25%;' src="assets/icons/novel/s3.jpg"></a>
         <!-- <br><a href="assets/images/dataset/Figures_dataset3.pdf">Scene 1</a> -->
-      </div>
+      <!-- </div>
       <div class="col-2" style='flex:0 0 25%;max-width:25%;'>
-        <a  href="assets/images/dataset/Figures_dataset18.pdf"><img style='width:60%; border-radius: 25%;' src="assets/icons/novel/s18.jpg"></a>
+        <a  href="assets/images/dataset/Figures_dataset18.pdf"><img style='width:60%; border-radius: 25%;' src="assets/icons/novel/s18.jpg"></a> -->
         <!-- <br><a href="assets/images/dataset/Figures_dataset18.pdf">Scene 6</a> -->
-      </div>
+      <!-- </div>
       <div class="col-2" style='flex:0 0 25%;max-width:25%;'>
-        <a  href="assets/images/dataset/Figures_dataset25.pdf"><img style='width:60%; border-radius: 25%;' src="assets/icons/novel/s25.jpg"></a>
+        <a  href="assets/images/dataset/Figures_dataset25.pdf"><img style='width:60%; border-radius: 25%;' src="assets/icons/novel/s25.jpg"></a> -->
         <!-- <br><a href="assets/images/dataset/Figures_dataset25.pdf">Scene 8</a> -->
-      </div>
+      <!-- </div>
       <div class="col-2" style='flex:0 0 25%;max-width:25%;'>
-        <a  href="assets/images/dataset/Figures_dataset26.pdf"><img style='width:60%; border-radius: 25%;' src="assets/icons/novel/s26.jpg"></a>
+        <a  href="assets/images/dataset/Figures_dataset26.pdf"><img style='width:60%; border-radius: 25%;' src="assets/icons/novel/s26.jpg"></a> -->
         <!-- <br><a href="assets/images/dataset/Figures_dataset26.pdf">Scene 9</a> -->
-      </div>
+      <!-- </div>
       
     </div>
   </div>
   </div>
-</section>
+</section> -->
 <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
