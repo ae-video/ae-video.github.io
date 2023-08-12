@@ -23,7 +23,7 @@ class Sample_viewer{
 		this.anim_dir = 1;
 
 		//add data variables
-		this.n_scenes_data = 2;
+		this.n_scenes_data = 4;
 		this.cur_frame_data = 0;
 		this.cur_ev_data = 0;
 		this.base_im_data = '0000';
