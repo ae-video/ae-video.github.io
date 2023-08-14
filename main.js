@@ -203,5 +203,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	novel_viewer.change_scene_data('0000');
 	novel_viewer.change_frame_data(0);
 	novel_viewer.change_ev_data(7); //set exposure to something we can initially see
+	novel_viewer.cycle_frames(100);
 	// novel_viewer.change_variant('orbit');
 });
